@@ -15,3 +15,12 @@ const qs2 = ([pivot = [], ...list]) =>
     pivot,
     ...qs2(list.filter(x => x > pivot))
   ];
+
+
+// or even smaller
+var qs2 = ([h = "", ...t]) => 
+  (h.charAt) ? [] : [
+    ...qs2(t.filter(x => x <= h)),
+    h,
+    ...qs2(t.filter(x => x > h))
+  ];
