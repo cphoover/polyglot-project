@@ -19,7 +19,7 @@ const qs2 = ([pivot = [], ...list]) =>
 
 // or even smaller
 const qs2 = ([h = "", ...t]) => 
-  (h.charAt) ? [] : [
+  h.charAt ? [] : [
     ...qs2(t.filter(x => x <= h)),
     h,
     ...qs2(t.filter(x => x > h))
