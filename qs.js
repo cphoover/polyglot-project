@@ -10,8 +10,7 @@ const qs = (list, pivot) =>
 
 // or alternatively
 const qs2 = ([pivot = [], ...list]) => 
-  (pivot.length == 0) ? [] :
-   [
+  (pivot.length < 1) ? [] : [
     ...qs2(list.filter(x => x <= pivot)),
     pivot,
     ...qs2(list.filter(x => x > pivot))
